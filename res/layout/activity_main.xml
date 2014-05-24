@@ -6,77 +6,73 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:background="@drawable/quoteable"
+    tools:context=".MainActivity" 
+    
+    >
 
+		<TextView
+		    android:id="@+id/title"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:text="Quote of the Day"
+		    android:layout_alignParentRight="true"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-     <TextView
+    <Button
+        android:id="@+id/fbButton"
+        android:layout_width="125px"
+        android:layout_height="50px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+          android:layout_marginRight="50px"
+        android:layout_marginBottom="2px"
+        android:layout_marginTop="2px"
+        android:layout_toLeftOf="@+id/title"
+        android:onClick="fbClick"
+        android:text="Share"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+		
+		<TextView
         android:id="@+id/quote"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_height="300px"
+        android:layout_marginTop="10px"
+        android:layout_below="@+id/title"
         android:text=""
+        android:maxLines = "9"
+        android:scrollbars = "vertical"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/quote"
-        android:text="Search By Category"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     
-     <Spinner
-        android:id="@+id/categorySpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true" />
      
-     
-    <Button
+    
+      <Button
         android:id="@+id/categoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/categorySpinner"
-        android:layout_below="@+id/categorySpinner"
-        android:text="@string/getQuote" />
-
-    <ProgressBar
-        android:id="@+id/marker_progress"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/categoryButton"
-        android:indeterminate="true" />
-
-   
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_below="@+id/categoryButton"
-        android:text="Search By Author"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    
-     <Spinner
-        android:id="@+id/authorSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/categoryButton"
-        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/quote"
+        android:onClick="categoryClick"
+        android:text="@string/searchCategory" 
+        android:background="@drawable/button"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         />
     
-     
-     
-    <Button
+  	 <Button
         android:id="@+id/authorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/authorSpinner"
-        android:text="@string/getQuote" />
-    
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/categoryButton"
+        android:onClick="authorClick"
+        android:text="@string/searchAuthor" 
+        android:background="@drawable/button"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
+        
+        />
+  
 </RelativeLayout>
